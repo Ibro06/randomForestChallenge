@@ -10,20 +10,6 @@ execute:
 
 # 🌲 Random Forest Challenge - The Power of Weak Learners
 
-::: {.callout-important}
-## 📊 Challenge Requirements In [Student Analysis Section](#student-analysis-section)
-
-Navigate to the [Student Analysis Section](#student-analysis-section) to see the challenge requirements.
-
-:::
-
-::: {.callout-important}
-## 🎯 Note on Python Usage
-
-You have not been coached through setting up a Python environment.  **If using Python** You will need to set up a Python environment and install the necessary packages to run this code - takes about 15 minutes; see [https://quarto.org/docs/projects/virtual-environments.html](https://quarto.org/docs/projects/virtual-environments.html).  Alternatively, delete the Python code and only leave the remaining R code that is provided.  You can see the executed Python output at my GitHub pages site: [https://flyaflya.github.io/randomForestChallenge/](https://flyaflya.github.io/randomForestChallenge/).
-
-:::
-
 ## The Problem: Can Many Weak Learners Beat One Strong Learner?
 
 **Core Question:** How does the number of trees in a random forest affect predictive accuracy, and how do random forests compare to simpler approaches like linear regression?
