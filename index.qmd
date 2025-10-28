@@ -52,7 +52,7 @@ Since we anticipate non-linear relationships, random forests are well-suited to 
 
 ```{python}
 #| label: load-and-model-python
-#| echo: true
+#| echo: false
 
 import pandas as pd
 import numpy as np
@@ -108,7 +108,7 @@ Our analysis reveals a clear pattern: **more trees consistently improve performa
 
 ```{python}
 #| label: performance-comparison-python
-#| echo: true
+#| echo: false
 #| fig-width: 10
 #| fig-height: 6
 
@@ -382,155 +382,4 @@ When should you choose random forests over linear regression?
 
 For our housing dataset with its non-linear zip code effects and feature interactions, **the 100-tree random forest wins decisively**. But in domains where relationships are more linear or where explainability trumps accuracy, linear regression remains the professional choice.
 
-## Challenge Requirements 📋
-
-### Minimum Requirements for Any Points on Challenge
-
-1. **Create a GitHub Pages Site:** Use the starter repository (see Repository Setup section below) to begin with a working template. The repository includes all the analysis code and visualizations above.  Use just one language for the analysis and visualizations, delete the other language and omit the panel tabsets.
-
-2. **Add Analysis and Visualizations:** Complete the three analysis sections above with your own code and insights.
-
-3. **GitHub Repository:** Use your forked repository (from the starter repository) named "randomForestChallenge" in your GitHub account.
-
-4. **GitHub Pages Setup:** The repository should be made the source of your github pages:
-
-   - Go to your repository settings (click the "Settings" tab in your GitHub repository)
-   - Scroll down to the "Pages" section in the left sidebar
-   - Under "Source", select "Deploy from a branch"
-   - Choose "main" branch and "/ (root)" folder
-   - Click "Save"
-   - Your site will be available at: `https://[your-username].github.io/randomForestChallenge/`
-   - **Note:** It may take a few minutes for the site to become available after enabling Pages
-
-## Getting Started: Repository Setup 🚀
-
-::: {.callout-important}
-## 📁 Quick Start with Starter Repository
-
-**Step 1:** Fork the starter repository to your github account at [https://github.com/flyaflya/randomForestChallenge.git](https://github.com/flyaflya/randomForestChallenge.git)
-
-**Step 2:** Clone your fork locally using Cursor (or VS Code)
-
-**Step 3:** You're ready to start! The repository includes pre-loaded data and a working template with all the analysis above.
-:::
-
-::: {.callout-tip}
-## 💡 Why Use the Starter Repository?
-
-**Benefits:**
-
-- **Pre-loaded data:** All required data and analysis code is included
-- **Working template:** Basic Quarto structure (`index.qmd`) is ready
-- **No setup errors:** Avoid common data loading issues
-- **Focus on analysis:** Spend time on the visualizations and analysis, not data preparation
-:::
-
-### Getting Started Tips
-
-::: {.callout-note}
-## 🎯 Navy SEALs Motto
-
-> "Slow is Smooth and Smooth is Fast"
-
-*Take your time to understand the random forest mechanics, plan your approach carefully, and execute with precision. Rushing through this challenge will only lead to errors and confusion.*
-:::
-
-::: {.callout-warning}
-## 💾 Important: Save Your Work Frequently!
-
-**Before you start:** Make sure to commit your work often using the Source Control panel in Cursor (Ctrl+Shift+G or Cmd+Shift+G). This prevents the AI from overwriting your progress and ensures you don't lose your work.
-
-**Commit after each major step:**
-
-- After adding your visualizations
-- After adding your analysis
-- After rendering to HTML
-- Before asking the AI for help with new code
-
-**How to commit:**
-
-1. Open Source Control panel (Ctrl+Shift+G)
-2. Stage your changes (+ button)
-3. Write a descriptive commit message
-4. Click the checkmark to commit
-
-*Remember: Frequent commits are your safety net!*
-:::
-
-## Grading Rubric 🎓
-
-::: {.callout-important}
-## 📊 What You're Really Being Graded On
-
-**This is an investigative report, not a coding exercise.** You're analyzing random forest models and reporting your findings like a professional analyst would. Think of this as a brief you'd write for a client or manager about the power of ensemble learning and when to use random forests vs simpler approaches.
-
-**What makes a great report:**
-
-- **Clear narrative:** Tell the story of what you discovered about ensemble learning
-- **Insightful analysis:** Focus on the most interesting findings about random forest performance
-- **Professional presentation:** Clean, readable, and engaging
-- **Concise conclusions:** No AI babble or unnecessary technical jargon
-- **Human insights:** Your interpretation of what the performance improvements actually mean
-- **Practical implications:** When random forests are worth the added complexity
-
-**What we're looking for:** A compelling 2-3 minute read that demonstrates both the power of ensemble learning and the importance of choosing the right tool for the job.
-:::
-
-### Questions to Answer for 75% Grade on Challenge
-
-1. **Power of More Trees Analysis:** Provide a clear, well-reasoned analysis of how random forest performance improves with more trees. Your analysis should demonstrate understanding of ensemble learning principles and diminishing returns.
-
-### Questions to Answer for 85% Grade on Challenge
-
-2. **Overfitting Analysis:** Provide a thorough analysis comparing decision trees vs random forests in terms of overfitting. Your analysis should explain why individual trees overfit while random forests don't, and the mechanisms that prevent overfitting in ensemble methods.
-
-### Questions to Answer for 95% Grade on Challenge
-
-3. **Linear Regression Comparison:** Your analysis should include a clear comparison table and discussion of when random forests are worth the added complexity vs linear regression. Focus on practical implications for real-world applications.
-
-### Questions to Answer for 100% Grade on Challenge
-
-4. **Professional Presentation:** Your analysis should be written in a professional, engaging style that would be appropriate for a business audience. Use clear visualizations and focus on practical insights rather than technical jargon.
-
-## Submission Checklist ✅
-
-**Minimum Requirements (Required for Any Points):**
-
-- [ ] Forked starter repository from [https://github.com/flyaflya/randomForestChallenge.git](https://github.com/flyaflya/randomForestChallenge.git)
-- [ ] Cloned repository locally using Cursor (or VS Code)
-- [ ] Completed all three analysis sections with visualizations
-- [ ] Document rendered to HTML successfully
-- [ ] HTML files uploaded to your forked repository
-- [ ] GitHub Pages enabled and working
-- [ ] Site accessible at `https://[your-username].github.io/randomForestChallenge/`
-
-**75% Grade Requirements:**
-
-- [ ] Clear analysis of how random forest performance improves with more trees
-- [ ] Discussion of diminishing returns in ensemble learning
-
-**85% Grade Requirements:**
-
-- [ ] Thorough overfitting analysis comparing decision trees vs random forests
-- [ ] Explanation of mechanisms that prevent overfitting in random forests
-
-**95% Grade Requirements:**
-
-- [ ] Complete linear regression comparison with clear table
-- [ ] Discussion of when random forests are worth the complexity
-
-**100% Grade Requirements:**
-
-- [ ] Professional presentation style appropriate for business audience
-- [ ] Clear, engaging narrative that tells a compelling story
-- [ ] Practical insights that would help a real data scientist
-
-**Report Quality (Critical for Higher Grades):**
-
-- [ ] Clear, engaging narrative that tells a story
-- [ ] Focus on the most interesting findings about ensemble learning
-- [ ] Professional writing style (no AI-generated fluff)
-- [ ] Concise analysis that gets to the point
-- [ ] Practical insights that would help a real data scientist
-- [ ] Well-designed visualizations that support your analysis
 
