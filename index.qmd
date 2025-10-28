@@ -306,11 +306,12 @@ The result? **Random forests with 500+ trees achieve $39,000 test RMSE** — out
 ### 3. Linear Regression vs Random Forest Comparison
 
 ```{python}
-#| label: linear-comparison-python
+#| label: linear-comparison-viz-python
 #| echo: false
+#| fig-width: 12
+#| fig-height: 6
 
 from sklearn.linear_model import LinearRegression
-from IPython.display import display, HTML
 
 # Build linear regression model
 lm_model = LinearRegression()
@@ -319,7 +320,49 @@ lm_predictions = lm_model.predict(X_test)
 lm_rmse = np.sqrt(mean_squared_error(y_test, lm_predictions))
 lm_r2 = r2_score(y_test, lm_predictions)
 
-# Create comparison table
+# Create comparison visualization
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))
+
+# Get RMSE values for comparison
+models = ['Linear Regression', '1 Tree', '100 Trees', '1000 Trees']
+rmse_values = [lm_rmse, rmse_1_test, rmse_100_test, rmse_1000_test]
+r2_values = [lm_r2, r2_1, r2_100, r2_1000]
+
+# Colors for the bars
+colors = ['#E63946', '#2E86AB', '#06A77D', '#06A77D']
+
+# RMSE Comparison Plot
+bars1 = ax1.bar(models, rmse_values, color=colors, alpha=0.8, edgecolor='black', linewidth=1.5)
+ax1.set_ylabel('RMSE ($)', fontsize=12, fontweight='bold')
+ax1.set_title('Model Performance: RMSE Comparison', fontsize=14, fontweight='bold', pad=15)
+ax1.grid(axis='y', alpha=0.3, linestyle='--')
+ax1.set_ylim(35000, 55000)
+
+# Add value labels on bars
+for bar, value in zip(bars1, rmse_values):
+    height = bar.get_height()
+    ax1.text(bar.get_x() + bar.get_width()/2., height,
+             f'${value:,.0f}', 
+             ha='center', va='bottom', fontsize=10, fontweight='bold')
+
+# R² Comparison Plot
+bars2 = ax2.bar(models, r2_values, color=colors, alpha=0.8, edgecolor='black', linewidth=1.5)
+ax2.set_ylabel('R² Score', fontsize=12, fontweight='bold')
+ax2.set_title('Model Performance: R² Comparison', fontsize=14, fontweight='bold', pad=15)
+ax2.grid(axis='y', alpha=0.3, linestyle='--')
+ax2.set_ylim(0.5, 0.9)
+
+# Add value labels on bars
+for bar, value in zip(bars2, r2_values):
+    height = bar.get_height()
+    ax2.text(bar.get_x() + bar.get_width()/2., height,
+             f'{value:.3f}', 
+             ha='center', va='bottom', fontsize=10, fontweight='bold')
+
+plt.tight_layout()
+plt.show()
+
+# Display comparison table
 comparison_data = {
     'Model': ['Linear Regression', 
               'Random Forest (1 tree)', 
